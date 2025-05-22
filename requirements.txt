@@ -1,0 +1,13 @@
+fastapi
+gunicorn
+uvicorn[standard]
+python-dotenv
+pandas
+numpy
+aiohttp
+requests
+dnspython
+watchdog
+xgboost
+python-multipart
+scikit-learn

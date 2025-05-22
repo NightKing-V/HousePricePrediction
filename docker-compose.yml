@@ -1,0 +1,19 @@
+services:
+  Model_Backend:
+    build:
+      context: ./  # Build context directory (adjust path if necessary)
+    image: python:3.12.3-slim
+    container_name: Model_Backend
+    ports:
+      - "8000:8000"  # Exposing FastAPI on port 8000
+    volumes:
+      - .:/app  # Bind mount your local code into the container
+    env_file:
+      - .env  # Make sure to create and manage your .env file properly
+    networks:
+      - fastapi-network
+    restart: unless-stopped  # Always restart unless manually stopped
+
+networks:
+  fastapi-network:
+    driver: bridge
